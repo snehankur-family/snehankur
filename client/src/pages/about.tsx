@@ -1,9 +1,81 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
+import { Card, CardContent } from "@/components/ui/card";
 const years_of_service = new Date().getFullYear() - 2017;
 
 export default function About() {
   const [, setLocation] = useLocation();
+  type BoardMember = { name: string; photo: string; post: string };
+  type AdvisorMember = { name: string; photo: string };
+
+  const boardMembers: BoardMember[] = [
+    {
+      name: "नीता कातारे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/68d714c7-1a9f-4804-9565-fa7a82ad024f.jpeg?raw=true",
+      post: "अध्यक्ष",
+    },
+    {
+      name: "संतोष कातारे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/b559bbd3-7d83-422b-8229-2da641bb8aa2.jpeg?raw=true",
+      post: "उपाध्यक्ष",
+    },
+    {
+      name: "सविता काकडे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/5966e0c3-7bab-4a5a-aa86-5a5448f17c83%20(1).jpeg?raw=true",
+      post: "सचिव",
+    },
+    {
+      name: "अमोल लाळे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/0583076a-3321-4cdd-98cf-d23e7877241f.jpeg?raw=true",
+      post: "सहसचिव",
+    },
+    {
+      name: "प्रशांत राऊत",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/a061c208-a674-43e9-bb9a-6f77bb6096c9.jpeg?raw=true",
+      post: "कोषाध्यक्ष",
+    },
+    {
+      name: "निवृत्ती कातारे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/e59cd991-9b27-4c48-a675-cc51439cd56a.jpeg?raw=true",
+      post: "सदस्य",
+    },
+    {
+      name: "भाग्यश्री कातारे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/547aa066-3cca-4331-b134-634bfde6997e.jpeg?raw=true",
+      post: "सदस्य",
+    },
+  ];
+
+  const advisorMembers: AdvisorMember[] = [
+    {
+      name: "प्रदीप कातारे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/d270d1b4-fd7f-40de-afda-3545190a9dfc.jpeg?raw=true",
+    },
+    {
+      name: "विकास टेकुळे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/f97a8321-1228-4d99-93dc-3eb8e87d1d18.jpeg?raw=true",
+    },
+
+    {
+      name: "कौशल्या कातारे",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/bef88691-d1cb-475b-99c7-324bf2f86cac.jpeg?raw=true",
+    },
+    {
+      name: "दिपक सवने",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/19949a3b-dadb-46f1-9798-630cb5c5d875.jpeg?raw=true",
+    },
+  ];
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-orange-50">
       <div className="max-w-7xl mx-auto">
@@ -358,6 +430,129 @@ export default function About() {
                 समुदाय आहे ज्यांचा असा विश्वास आहे की कोणत्याही मुलाला कधीही
                 एकटे वाटू नये. ❤️🤗
               </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Our Team Section */}
+        <div className="mb-24">
+          <motion.h2
+            className="text-3xl font-bold text-gray-900 text-center mb-12 relative inline-block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="after:content-[''] after:absolute after:w-full after:h-1 after:bg-orange-400 after:bottom-0 after:left-0">
+              Our Team
+            </span>
+          </motion.h2>
+
+          {/* Advisory Committee Section */}
+          <motion.div
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8 text-orange-600">
+              ADVISORY COMMITTEE OF SNEHANKUR
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {advisorMembers.map((member, idx) => (
+                <motion.div
+                  key={`advisor-${idx}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <Card className="overflow-hidden bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div className="aspect-square w-full overflow-hidden">
+                      <img
+                        src={member.photo}
+                        alt={`${member.name}`}
+                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-110"
+                        loading="lazy"
+                      />
+                    </div>
+                    <CardContent className="text-center p-4">
+                      <motion.p
+                        className="text-sm font-semibold text-black"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 + idx * 0.1 }}
+                      >
+                        {member.name}
+                      </motion.p>
+                      <motion.p
+                        className="text-xs text-black mt-1"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4 + idx * 0.1 }}
+                      >
+                        {member.post}
+                      </motion.p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Board of Directors Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8 text-orange-600">
+              BOARD OF DIRECTOR-SNEHANKUR
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {boardMembers.map((member, idx) => (
+                <motion.div
+                  key={`board-${idx}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <Card className="overflow-hidden bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div className="aspect-square w-full overflow-hidden">
+                      <img
+                        src={member.photo}
+                        alt={`${member.name}`}
+                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-110"
+                        loading="lazy"
+                      />
+                    </div>
+                    <CardContent className="text-center p-4">
+                      <motion.p
+                        className="text-sm font-semibold text-black"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 + idx * 0.1 }}
+                      >
+                        {member.name}
+                      </motion.p>
+                      <motion.p
+                        className="text-xs text-black mt-1"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4 + idx * 0.1 }}
+                      >
+                        {member.post}
+                      </motion.p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
