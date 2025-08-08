@@ -90,7 +90,9 @@ export default function Donate() {
               <div className="space-y-4">
                 <div>
                   <p className="font-medium text-gray-900">Account Name</p>
-                  <p className="text-gray-600">Snehankur</p>
+                  <p className="text-gray-600">
+                    SAMARPAN BAHU UDDESHIYA SEVABHAVI SANSTH
+                  </p>
                 </div>
                 <Separator />
                 <div>
