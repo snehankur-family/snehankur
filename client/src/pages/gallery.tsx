@@ -50,79 +50,94 @@ const videos = [
     description: "Highlights from our annual day",
   },
   {
-    id: "LgjT8Es4wJA",
+    id: "kStsxFPGGlg",
     title: "Annual Day Celebration",
     description: "Highlights from our annual day",
+  },
+  {
+    id: "TDR_BUwrf4Y",
+    title: "Annual Day Celebration",
+    description: "Highlights from our annual day",
+  },
+  {
+    id: "skiyE1pI06o",
+    title: "Celebration",
+    description: "Highlights from our day",
+  },
+  {
+    id: "LgjT8Es4wJA",
+    title: "Celebration",
+    description: "Highlights from our day",
   },
   {
     id: "0JrtY9esY1M",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    title: "Celebration",
+    description: "Highlights from our day",
   },
   {
     id: "y1G9VTSlRL0",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    title: "Celebration",
+    description: "Highlights from our  day",
   },
   {
     id: "RGujSDQrPuU",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "NDaHbeBQsDU",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "kcMNW_yrIHk",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "8QZ9kvEmm_c",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "UN2amGHacYo",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "lqKfyKB_ngM",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "AC-nztuwXew",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "nQiyOsFXxJM",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "mp0ul_M-Hss",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "HdeBH_6Y-QU",
     title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    description: "Highlights from our day",
   },
   {
     id: "rAd2kdq5Ggk",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    title: "Celebration",
+    description: "Highlights from our day",
   },
   {
     id: "_VQpIxDymMw",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    title: "Celebration",
+    description: "Highlights from our day",
   },
 ];
 
@@ -222,8 +237,8 @@ export default function Gallery() {
           Our Gallery
         </h1>
         <p className="text-lg max-w-xl mx-auto text-gray-600">
-          Browse through photos and videos capturing moments from our journey
-          and activities.
+          📸 आपल्या प्रवासातील आणि उपक्रमांतील क्षण दर्शवणारी छायाचित्रे आणि
+          व्हिडिओ पाहा.
         </p>
       </div>
 
@@ -321,12 +336,12 @@ export default function Gallery() {
                           </svg>
                         </div>
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4">
+                      {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4">
                         <h3 className="font-bold text-lg">{video.title}</h3>
                         <p className="text-sm opacity-90">
                           {video.description}
                         </p>
-                      </div>
+                      </div> */}
                     </div>
                   </CardContent>
                 </Card>
