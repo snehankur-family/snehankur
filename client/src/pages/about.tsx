@@ -75,6 +75,16 @@ export default function About() {
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/19949a3b-dadb-46f1-9798-630cb5c5d875.jpeg?raw=true",
     },
+    {
+      name: "आशिष खरात",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/new01.jpeg?raw=true",
+    },
+    {
+      name: "विजय गवळी",
+      photo:
+        "https://github.com/snehankur-family/website-photos/blob/main/members/new02.jpeg?raw=true",
+    },
   ];
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-orange-50">
@@ -85,7 +95,7 @@ export default function About() {
             About Snehankur
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            आमचा प्रवास, ध्येय आणि मुलांच्या जीवनात आम्ही करत असलेल्या
+            🏡 आमचा प्रवास, ध्येय आणि मुलांच्या जीवनात आम्ही करत असलेल्या
             प्रभावाबद्दल जाणून घ्या.
           </p>
         </div>
@@ -486,14 +496,6 @@ export default function About() {
                         transition={{ delay: 0.3 + idx * 0.1 }}
                       >
                         {member.name}
-                      </motion.p>
-                      <motion.p
-                        className="text-xs text-black mt-1"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 + idx * 0.1 }}
-                      >
-                        {member.post}
                       </motion.p>
                     </CardContent>
                   </Card>

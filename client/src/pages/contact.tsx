@@ -96,7 +96,7 @@ export default function Contact() {
               Get in Touch
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              आम्हाला तुमचे म्हणणे ऐकायला आवडेल. कृपया यापैकी कोणत्याही
+              💬 आम्हाला तुमचे म्हणणे ऐकायला आवडेल. कृपया यापैकी कोणत्याही
               माध्यमाद्वारे आमच्याशी संपर्क साधा.
             </p>
 
@@ -117,8 +117,15 @@ export default function Contact() {
                   href="https://maps.app.goo.gl/pZr4cFgn5bEZMyzaA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 hover:text-orange-600 font-semibold mt-2 inline-block"
+                  className="text-orange-500 hover:text-orange-600 font-semibold mt-2 inline-block flex items-center gap-2"
                 >
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
                   View on Google Maps
                 </a>
               </div>

@@ -29,8 +29,8 @@ export default function Donate() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Donate</h1>
           <p className="text-lg text-gray-600">
-            तुमच्या योगदानामुळे आम्हाला आमच्या मुलांसाठी चांगली काळजी आणि संधी
-            उपलब्ध होण्यास मदत होते.
+            💖 तुमच्या योगदानामुळे आम्हाला आमच्या मुलांसाठी चांगली काळजी आणि
+            संधी उपलब्ध होण्यास मदत होते.
           </p>
         </div>
 
