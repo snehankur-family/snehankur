@@ -18,19 +18,19 @@ export default function About() {
     {
       name: "संतोष कातारे",
       photo:
-        "https://github.com/snehankur-family/website-photos/blob/main/members/b559bbd3-7d83-422b-8229-2da641bb8aa2.jpeg?raw=true",
+        "https://github.com/snehankur-family/website-photos/blob/main/members/b559bbd3-7d83-422b-8..._imresizer.jpg?raw=true",
       post: "उपाध्यक्ष",
     },
     {
       name: "सविता काकडे",
       photo:
-        "https://github.com/snehankur-family/website-photos/blob/main/members/5966e0c3-7bab-4a5a-aa86-5a5448f17c83%20(1).jpeg?raw=true",
+        "https://github.com/snehankur-family/website-photos/blob/main/members/5966e0c3-7bab-4a5a-a..._imresizer.jpg?raw=true",
       post: "सचिव",
     },
     {
       name: "अमोल लाळे",
       photo:
-        "https://github.com/snehankur-family/website-photos/blob/main/members/0583076a-3321-4cdd-98cf-d23e7877241f.jpeg?raw=true",
+        "https://github.com/snehankur-family/website-photos/blob/main/members/0583076a-3321-4cdd-9..._imresizer.jpg?raw=true",
       post: "सहसचिव",
     },
     {
@@ -83,7 +83,7 @@ export default function About() {
     {
       name: "विजय गवळी",
       photo:
-        "https://github.com/snehankur-family/website-photos/blob/main/members/new02.jpeg?raw=true",
+        "https://github.com/snehankur-family/website-photos/blob/main/members/new02_imresizer.jpg?raw=true",
     },
   ];
   return (
@@ -295,7 +295,7 @@ export default function About() {
               transition={{ duration: 0.3 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1509163245925-f4255dea7727?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://github.com/snehankur-family/website-photos/blob/main/photos/21b2c24c-d9b3-4778-a381-d4605f82b1f4.jpeg?raw=true"
                 alt="Children playing together"
                 className="rounded-lg shadow-xl object-cover w-full max-w-md h-64"
               />
