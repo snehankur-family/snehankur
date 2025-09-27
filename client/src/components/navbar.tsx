@@ -3,17 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Navbar() {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navigation = [
-    { name: "Home", href: "/snehankur" },
-    { name: "About", href: "/snehankur/about" },
-    { name: "Gallery", href: "/snehankur/gallery" },
-    { name: "Donate", href: "/snehankur/donate" },
-    { name: "Contact", href: "/snehankur/contact" },
+    { name: t("home"), href: "/snehankur" },
+    { name: t("aboutUs"), href: "/snehankur/about" },
+    { name: t("gallery"), href: "/snehankur/gallery" },
+    { name: t("donate"), href: "/snehankur/donate" },
+    { name: t("contact"), href: "/snehankur/contact" },
   ];
 
   return (

@@ -5,6 +5,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface GitHubFile {
   name: string;
@@ -21,127 +22,128 @@ interface ImageItem {
 const videos = [
   {
     id: "mGjrqsbeT0Q",
-    title: "Volunteer Experiences",
-    description: "Stories from our volunteers",
+    titleKey: "volunteerExperiences",
+    descriptionKey: "volunteerExperiencesDesc",
   },
   {
     id: "jPL3U8TZTA0",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "WhW0h3pOtv4",
-    title: "Our Mission",
-    description: "Learn about our work and mission",
+    titleKey: "ourMission",
+    descriptionKey: "ourMissionDesc",
   },
   {
     id: "O_O1iFgTgeA",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "jPL3U8TZTA0",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "9G3AezByQzY",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "kStsxFPGGlg",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "TDR_BUwrf4Y",
-    title: "Annual Day Celebration",
-    description: "Highlights from our annual day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "skiyE1pI06o",
-    title: "Celebration",
-    description: "Highlights from our day",
+    titleKey: "celebration",
+    descriptionKey: "celebrationDesc",
   },
   {
     id: "LgjT8Es4wJA",
-    title: "Celebration",
-    description: "Highlights from our day",
+    titleKey: "celebration",
+    descriptionKey: "celebrationDesc",
   },
   {
     id: "0JrtY9esY1M",
-    title: "Celebration",
-    description: "Highlights from our day",
+    titleKey: "celebration",
+    descriptionKey: "celebrationDesc",
   },
   {
     id: "y1G9VTSlRL0",
-    title: "Celebration",
-    description: "Highlights from our  day",
+    titleKey: "celebration",
+    descriptionKey: "celebrationDesc",
   },
   {
     id: "RGujSDQrPuU",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "NDaHbeBQsDU",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "kcMNW_yrIHk",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "8QZ9kvEmm_c",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "UN2amGHacYo",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "lqKfyKB_ngM",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "AC-nztuwXew",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "nQiyOsFXxJM",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "mp0ul_M-Hss",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "HdeBH_6Y-QU",
-    title: "Annual Day Celebration",
-    description: "Highlights from our day",
+    titleKey: "annualDayCelebration",
+    descriptionKey: "annualDayCelebrationDesc",
   },
   {
     id: "rAd2kdq5Ggk",
-    title: "Celebration",
-    description: "Highlights from our day",
+    titleKey: "celebration",
+    descriptionKey: "celebrationDesc",
   },
   {
     id: "_VQpIxDymMw",
-    title: "Celebration",
-    description: "Highlights from our day",
+    titleKey: "celebration",
+    descriptionKey: "celebrationDesc",
   },
 ];
 
 export default function Gallery() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [activeTab, setActiveTab] = useState("photos");
@@ -194,7 +196,7 @@ export default function Gallery() {
           (file: GitHubFile, index: number) => ({
             src: file.download_url,
             alt: `Snehankur Photo ${index + 1}`,
-            category: "Activities",
+            category: t("activities"),
           })
         );
 
@@ -203,7 +205,7 @@ export default function Gallery() {
           (file: GitHubFile, index: number) => ({
             src: file.download_url,
             alt: `Snehankur Media Item ${index + 1}`,
-            category: "News",
+            category: t("news"),
           })
         );
 
@@ -234,11 +236,10 @@ export default function Gallery() {
     <div className="container mx-auto py-16 px-4">
       <div className="text-center mb-12">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
-          Our Gallery
+          {t("galleryTitle")}
         </h1>
         <p className="text-lg max-w-xl mx-auto text-gray-600">
-          📸 आपल्या प्रवासातील आणि उपक्रमांतील क्षण दर्शवणारी छायाचित्रे आणि
-          व्हिडिओ पाहा.
+          {t("galleryDescription")}
         </p>
       </div>
 
@@ -254,19 +255,19 @@ export default function Gallery() {
                 value="photos"
                 className="px-6 py-2 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-orange-500 data-[state=active]:text-white data-[state=active]:shadow-md"
               >
-                Photos
+                {t("photos")}
               </TabsTrigger>
               <TabsTrigger
                 value="videos"
                 className="px-6 py-2 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-orange-500 data-[state=active]:text-white data-[state=active]:shadow-md"
               >
-                Videos
+                {t("videos")}
               </TabsTrigger>
               <TabsTrigger
                 value="media"
                 className="px-6 py-2 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-orange-500 data-[state=active]:text-white data-[state=active]:shadow-md"
               >
-                Media
+                {t("media")}
               </TabsTrigger>
             </TabsList>
           </div>
@@ -287,7 +288,6 @@ export default function Gallery() {
                         className="w-full aspect-video object-cover"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4">
-                        <p className="text-sm font-medium">{image.category}</p>
                         <p className="text-xs opacity-75">{image.alt}</p>
                       </div>
                     </div>
@@ -309,7 +309,7 @@ export default function Gallery() {
                     <div className="aspect-video relative">
                       <img
                         src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                        alt={video.title}
+                        alt={t(video.titleKey as any)}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -368,7 +368,6 @@ export default function Gallery() {
                         className="w-full aspect-video object-cover"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4">
-                        <p className="text-sm font-medium">{item.category}</p>
                         <p className="text-xs opacity-75">{item.alt}</p>
                       </div>
                     </div>
@@ -420,7 +419,7 @@ export default function Gallery() {
       <Dialog open={videoDialogOpen} onOpenChange={setVideoDialogOpen}>
         <DialogContent className="sm:max-w-3xl">
           <DialogTitle>
-            <VisuallyHidden>Video Player</VisuallyHidden>
+            <VisuallyHidden>{t("videoPlayer")}</VisuallyHidden>
           </DialogTitle>
           <div className="aspect-video">
             <iframe

@@ -1,7 +1,10 @@
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Link } from "wouter";
+import { useLanguage } from "../lib/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-orange-50 border-t border-orange-100 py-10">
       <div className="container mx-auto px-4">
@@ -9,7 +12,7 @@ export default function Footer() {
           {/* Connect With Us */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-orange-600">
-              Connect With Us
+              {t("connectWithUs")}
             </h3>
             <div className="flex space-x-4 mb-4">
               <a
@@ -38,15 +41,17 @@ export default function Footer() {
               </a>
             </div>
             <div className="text-gray-600 text-sm">
-              <p className="mb-1">Email: Samarpan7171@gmail.com</p>
-              <p className="mb-1">Phone: +91 9689227171 / 8767222142</p>
+              <p className="mb-1">{t("emailFooter")}: Samarpan7171@gmail.com</p>
+              <p className="mb-1">
+                {t("phoneFooter")}: +91 9689227171 / 8767222142
+              </p>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-orange-600">
-              Quick Links
+              {t("quickLinks")}
             </h3>
             <ul className="space-y-2">
               <li>
@@ -54,7 +59,7 @@ export default function Footer() {
                   href="/snehankur"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
-                  Home
+                  {t("home")}
                 </Link>
               </li>
               <li>
@@ -62,7 +67,7 @@ export default function Footer() {
                   href="/snehankur/about"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
-                  About Us
+                  {t("aboutUs")}
                 </Link>
               </li>
               <li>
@@ -70,7 +75,7 @@ export default function Footer() {
                   href="/snehankur/gallery"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
-                  Gallery
+                  {t("gallery")}
                 </Link>
               </li>
               <li>
@@ -78,7 +83,7 @@ export default function Footer() {
                   href="/snehankur/donate"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
-                  Donate
+                  {t("donate")}
                 </Link>
               </li>
               <li>
@@ -86,7 +91,7 @@ export default function Footer() {
                   href="/snehankur/contact"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
-                  Contact
+                  {t("contact")}
                 </Link>
               </li>
             </ul>
@@ -95,18 +100,17 @@ export default function Footer() {
           {/* Address */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-orange-600">
-              Our Address
+              {t("ourAddress")}
             </h3>
             <address className="text-gray-600 text-sm not-italic">
               <p className="mb-3">
-                स्नेहांकुर सामाजिक प्रकल्प <br></br>
-                मापेगाव बु. (पुनर्वसन), <br />
-                परतूर-सेलु रोड, <br />
-                तालुका परतूर, जिल्हा जालना
-              </p>
-              <p className="mb-1">
-                प्रदिप कातारे - ९६८९२२७१७१ <br />
-                नीता कातारे - ८७६७२२२१४२
+                {t("address1")} <br></br>
+                {t("address2")} <br />
+                {t("address3")} <br />
+                {t("address4")} <br />
+                {t("address5")} <br />
+                {t("address6")} <br />
+                {t("address7")} <br />
               </p>
             </address>
           </div>
@@ -115,7 +119,8 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-orange-200">
           <p className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} स्नेहांकुर अनाथाश्रम. सर्व हक्क राखीव.
+            © {new Date().getFullYear()} {t("snehankurOrphanage")}.{" "}
+            {t("copyright")}
           </p>
         </div>
       </div>

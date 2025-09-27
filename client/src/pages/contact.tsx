@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle, Loader2 } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const formSchema = z.object({
   name: z
@@ -38,6 +39,7 @@ const formSchema = z.object({
 });
 
 export default function Contact() {
+  const { t } = useLanguage();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -93,25 +95,26 @@ export default function Contact() {
           {/* Contact Information */}
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              Get in Touch
+              {t("getInTouch")}
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              💬 आम्हाला तुमचे म्हणणे ऐकायला आवडेल. कृपया यापैकी कोणत्याही
-              माध्यमाद्वारे आमच्याशी संपर्क साधा.
+              {t("contactDescription")}
             </p>
 
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Address
+                  {t("address0")}
                 </h3>
                 <p className="text-gray-600">
-                  स्नेहांकुर सामाजिक प्रकल्प <br></br>
-                  मापेगाव बु. (पुनर्वसन), परतूर-सेलु रोड,
+                  {t("address1")} <br></br>
+                  {t("address2")}
                   <br />
-                  तालुका परतूर, जिल्हा जालना
+                  {t("address3")}
                   <br />
-                  महाराष्ट्र, भारत 431501
+                  {t("address4")}
+                  <br />
+                  {t("address5")}
                 </p>
                 <a
                   href="https://maps.app.goo.gl/pZr4cFgn5bEZMyzaA"
@@ -126,18 +129,18 @@ export default function Contact() {
                   >
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                   </svg>
-                  View on Google Maps
+                  {t("viewOnMaps")}
                 </a>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Contact
+                  {t("contactInfo")}
                 </h3>
                 <p className="text-gray-600">
-                  प्रदिप कातारे: +91 9689227171
+                  {t("address6")}
                   <br />
-                  नीता कातारे: +91 8767222142
+                  {t("address7")}
                   <br />
                   Samarpan7171@gmail.com
                 </p>
@@ -145,7 +148,7 @@ export default function Contact() {
 
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Social Media
+                  {t("socialMedia")}
                 </h3>
                 <div className="flex space-x-4">
                   <a
@@ -176,124 +179,6 @@ export default function Contact() {
               </div>
             </div>
           </div>
-
-          {/* Contact Form */}
-          {/* <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-              Send us a Message
-            </h2>
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-medium">Name</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Your name"
-                          className="focus-visible:ring-orange-500 transition-all"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-500" />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-medium">Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Your email"
-                          className="focus-visible:ring-orange-500 transition-all"
-                          type="email"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-500" />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="phoneNo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-medium">Phone</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="10 digit phone number"
-                          className="focus-visible:ring-orange-500 transition-all"
-                          inputMode="numeric"
-                          pattern="[0-9]*"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-500" />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="flex justify-between">
-                        <FormLabel className="font-medium">Message</FormLabel>
-                        <span className="text-xs text-gray-500">
-                          {field.value?.length || 0}/100 characters
-                        </span>
-                      </div>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Your message (10-100 characters)"
-                          className="min-h-[120px] focus-visible:ring-orange-500 transition-all"
-                          maxLength={100}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-500" />
-                    </FormItem>
-                  )}
-                />
-
-                {submitSuccess && (
-                  <Alert className="bg-green-50 text-green-700 border border-green-200 mb-4">
-                    <CheckCircle className="h-4 w-4 mr-2" />
-                    <AlertDescription>
-                      Message sent successfully!
-                    </AlertDescription>
-                  </Alert>
-                )}
-
-                <Button
-                  type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white transition-colors duration-300"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
-                </Button>
-              </form>
-            </Form>
-          </div> */}
         </div>
       </div>
     </div>

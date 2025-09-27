@@ -1,89 +1,116 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/lib/LanguageContext";
 const years_of_service = new Date().getFullYear() - 2017;
 
 export default function About() {
   const [, setLocation] = useLocation();
+  const { t } = useLanguage();
   type BoardMember = { name: string; photo: string; post: string };
   type AdvisorMember = { name: string; photo: string };
 
+  //our Team
+  const committee = {
+    President: t("President"),
+    VicePresident: t("VicePresident"),
+    Secretary: t("Secretary"),
+    JointSecretary: t("JointSecretary"),
+    Treasurer: t("Treasurer"),
+    Member: t("Member"),
+
+    PresidentName: t("PresidentName"),
+    VicePresidentName: t("VicePresidentName"),
+    SecretaryName: t("SecretaryName"),
+    JointSecretaryName: t("JointSecretaryName"),
+    TreasurerName: t("TreasurerName"),
+    MemberName1: t("MemberName1"),
+    MemberName2: t("MemberName2"),
+
+    AdvisorMember1: t("AdvisorMember1"),
+    AdvisorMember2: t("AdvisorMember2"),
+    AdvisorMember3: t("AdvisorMember3"),
+    AdvisorMember4: t("AdvisorMember4"),
+    AdvisorMember5: t("AdvisorMember5"),
+    AdvisorMember6: t("AdvisorMember6"),
+  };
+
   const boardMembers: BoardMember[] = [
     {
-      name: "नीता कातारे",
+      name: committee.VicePresidentName,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/68d714c7-1a9f-4804-9565-fa7a82ad024f.jpeg?raw=true",
-      post: "अध्यक्ष",
+      post: committee.VicePresident,
     },
     {
-      name: "संतोष कातारे",
+      name: committee.VicePresidentName,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/b559bbd3-7d83-422b-8..._imresizer.jpg?raw=true",
-      post: "उपाध्यक्ष",
+      post: committee.VicePresident,
     },
     {
-      name: "सविता काकडे",
+      name: committee.SecretaryName,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/5966e0c3-7bab-4a5a-a..._imresizer.jpg?raw=true",
-      post: "सचिव",
+      post: committee.Secretary,
     },
     {
-      name: "अमोल लाळे",
+      name: committee.JointSecretaryName,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/0583076a-3321-4cdd-9..._imresizer.jpg?raw=true",
-      post: "सहसचिव",
+      post: committee.JointSecretary,
     },
     {
-      name: "प्रशांत राऊत",
+      name: committee.TreasurerName,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/a061c208-a674-43e9-bb9a-6f77bb6096c9.jpeg?raw=true",
-      post: "कोषाध्यक्ष",
+      post: committee.Treasurer,
     },
     {
-      name: "निवृत्ती कातारे",
+      name: committee.MemberName1,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/e59cd991-9b27-4c48-a675-cc51439cd56a.jpeg?raw=true",
-      post: "सदस्य",
+      post: committee.Member,
     },
     {
-      name: "भाग्यश्री कातारे",
+      name: committee.MemberName2,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/547aa066-3cca-4331-b134-634bfde6997e.jpeg?raw=true",
-      post: "सदस्य",
+      post: committee.Member,
     },
   ];
 
   const advisorMembers: AdvisorMember[] = [
     {
-      name: "प्रदीप कातारे",
+      name: committee.AdvisorMember1,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/d270d1b4-fd7f-40de-afda-3545190a9dfc.jpeg?raw=true",
     },
     {
-      name: "विकास टेकुळे",
+      name: committee.AdvisorMember2,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/f97a8321-1228-4d99-93dc-3eb8e87d1d18.jpeg?raw=true",
     },
 
     {
-      name: "कौशल्या कातारे",
+      name: committee.AdvisorMember3,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/bef88691-d1cb-475b-99c7-324bf2f86cac.jpeg?raw=true",
     },
     {
-      name: "दिपक सवने",
+      name: committee.AdvisorMember4,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/19949a3b-dadb-46f1-9798-630cb5c5d875.jpeg?raw=true",
     },
     {
-      name: "आशिष खरात",
+      name: committee.AdvisorMember5,
       photo:
         "https://github.com/snehankur-family/website-photos/blob/main/members/new01.jpeg?raw=true",
     },
     {
-      name: "विजय गवळी",
+      name: committee.AdvisorMember6,
       photo:
-        "https://github.com/snehankur-family/website-photos/blob/main/members/new02_imresizer.jpg?raw=true",
+        "https://github.com/snehankur-family/website-photos/blob/main/members/DSC_0983.jpg?raw=true",
     },
   ];
   return (
@@ -92,11 +119,10 @@ export default function About() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            About Snehankur
+            {t("aboutSnehankur")}
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            🏡 आमचा प्रवास, ध्येय आणि मुलांच्या जीवनात आम्ही करत असलेल्या
-            प्रभावाबद्दल जाणून घ्या.
+            {t("aboutDescription")}
           </p>
         </div>
 
@@ -109,7 +135,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <span className="after:content-[''] after:absolute after:w-full after:h-1 after:bg-orange-400 after:bottom-0 after:left-0">
-              Our Achievements
+              {t("ourAchievements")}
             </span>
           </motion.h2>
 
@@ -132,13 +158,10 @@ export default function About() {
                   <span className="text-white text-2xl font-bold">15+</span>
                 </div>
                 <h3 className="text-2xl font-bold text-center mb-4 text-gray-800">
-                  मुलांना आधार
+                  {t("childrenSupported")}
                 </h3>
                 <p className="text-gray-600 text-center">
-                  आमच्या स्थापनेपासून आजपर्यंत आम्ही १५ हून अधिक मुलांना शिक्षण,
-                  निवारा आणि प्रेमळ संगोपन दिला आहे. त्यांच्या वाढीव विकासासाठी
-                  आम्ही आवश्यक ती संपूर्ण मदत आणि मार्गदर्शन पुरवले आहे,
-                  ज्यामुळे त्यांच्यात आत्मविश्वास व स्वावलंबन निर्माण झाले आहे.
+                  {t("childrenSupportedDesc")}
                 </p>
               </div>
             </motion.div>
@@ -163,13 +186,10 @@ export default function About() {
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold text-center mb-4 text-gray-800">
-                  सेवेची वर्षे
+                  {t("yearsOfService")}
                 </h3>
                 <p className="text-gray-600 text-center">
-                  आम्ही {years_of_service} हून अधिक वर्षांपासून गरजू आणि वंचित
-                  मुलांची सेवा करण्यास समर्पित आहोत. त्यांच्या कल्याणासाठी आमची
-                  सेवा नि:स्वार्थ आणि सातत्यपूर्ण असून, त्यांना उज्वल भविष्याची
-                  दिशा देणे हेच आमचे ध्येय आहे.
+                  {t("yearsOfServiceDesc")}
                 </p>
               </div>
             </motion.div>
@@ -192,14 +212,9 @@ export default function About() {
                   <span className="text-white text-2xl font-bold">5+</span>
                 </div>
                 <h3 className="text-2xl font-bold text-center mb-4 text-gray-800">
-                  पुरस्कार
+                  {t("awards")}
                 </h3>
-                <p className="text-gray-600 text-center">
-                  बालकल्याण आणि शिक्षण क्षेत्रातील उल्लेखनीय योगदानासाठी ५ हून
-                  अधिक प्रतिष्ठित पुरस्कारांनी आम्हाला गौरविण्यात आले आहे. हे
-                  पुरस्कार आमच्या निरंतर सेवाभावनेचे व गुणवत्तापूर्ण कार्याचे
-                  प्रमाण आहेत.
-                </p>
+                <p className="text-gray-600 text-center">{t("awardsDesc")}</p>
               </div>
             </motion.div>
           </div>
@@ -213,9 +228,9 @@ export default function About() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="after:content-[''] after:absolute after:w-full after:h-1 after:bg-orange-400 after:bottom-0 after:left-0">
-              Our Story
-            </span>
+            {/* <span className="after:content-[''] after:absolute after:w-full after:h-1 after:bg-orange-400 after:bottom-0 after:left-0">
+            {t("ourStory")}
+            </span> */}
           </motion.h2>
 
           {/* About Us */}
@@ -227,9 +242,9 @@ export default function About() {
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-orange-600">
-                About Us
+                {t("aboutUs")}
               </h3>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              {/* <p className="text-gray-700 mb-4 leading-relaxed">
                 २०१७ मध्ये स्थापन झालेले स्नेहांकुर हे एक लहान उपक्रम म्हणून
                 सुरू झाले जे करुणा आणि दूरदृष्टीने प्रेरित होते - ज्या मुलांना
                 स्वतःचे म्हणवणारे कोणी नव्हते त्यांना प्रेम, काळजी आणि संधी
@@ -287,7 +302,8 @@ export default function About() {
               <p className="text-gray-700 leading-relaxed">
                 स्नेहांकुर ही केवळ एक संस्था नाही - ती प्रेम, काळजी आणि दुसऱ्या
                 संधीची चळवळ आहे. 💖✨
-              </p>
+              </p> */}
+              <p>{t("aboutUsDesc")}</p>
             </div>
             <motion.div
               className="flex justify-center"
@@ -311,9 +327,9 @@ export default function About() {
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-orange-600">
-                About Founder
+                {t("aboutFounder")}
               </h3>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              {/* <p className="text-gray-700 mb-4 leading-relaxed">
                 प्रदीप कातारे हे एक दूरदर्शी समाजसुधारक आहेत ज्यांनी अनाथ आणि
                 वंचित मुलांच्या उन्नतीसाठी आपले जीवन समर्पित केले आहे. एक
                 सुशिक्षित आणि दयाळू व्यक्ती म्हणून, त्यांनी पारंपारिक करिअर
@@ -349,7 +365,8 @@ export default function About() {
                 त्यांचे निःस्वार्थ समर्पण अनेकांना प्रेरणा देत आहे, हे सिद्ध
                 करून की उत्कटतेने आणि वचनबद्धतेने प्रेरित होऊन दयाळूपणाचे एक
                 कृत्य असंख्य जीवन बदलू शकते.
-              </p>
+              </p> */}
+              <p> {t("founderDesc")}</p>
             </div>
             <motion.div
               className="flex justify-center"
@@ -384,9 +401,9 @@ export default function About() {
             </motion.div>
             <div className="md:order-1">
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-orange-600">
-                The Journey
+                {t("theJourney")}
               </h3>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              {/* <p className="text-gray-700 mb-4 leading-relaxed">
                 स्नेहांकुरचा प्रवास हा केवळ अनाथाश्रम बांधण्याची कहाणी नाही तर
                 संघर्षांवर मात करण्याची, आव्हानांमध्ये आशा शोधण्याची आणि
                 दयाळूपणाची शक्ती पाहण्याची कहाणी आहे. ❤️
@@ -439,7 +456,8 @@ export default function About() {
                 💞 कारण स्नेहांकुरच्या हृदयात, फक्त एक संस्था नाही - अशा लोकांचा
                 समुदाय आहे ज्यांचा असा विश्वास आहे की कोणत्याही मुलाला कधीही
                 एकटे वाटू नये. ❤️🤗
-              </p>
+              </p> */}
+              <p>{t("journeyDesc")}</p>
             </div>
           </motion.div>
         </div>
@@ -453,7 +471,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <span className="after:content-[''] after:absolute after:w-full after:h-1 after:bg-orange-400 after:bottom-0 after:left-0">
-              Our Team
+              {t("ourTeam")}
             </span>
           </motion.h2>
 
@@ -465,7 +483,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl font-bold text-gray-900 text-center mb-8 text-orange-600">
-              ADVISORY COMMITTEE OF SNEHANKUR
+              {t("advisoryCommittee")}
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {advisorMembers.map((member, idx) => (
@@ -511,7 +529,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold text-gray-900 text-center mb-8 text-orange-600">
-              BOARD OF DIRECTOR-SNEHANKUR
+              {t("boardOfDirectors")}
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {boardMembers.map((member, idx) => (
@@ -567,13 +585,9 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.5 }}
           whileHover={{ scale: 1.02 }}
         >
-          <h2 className="text-3xl font-bold mb-4">
-            आमच्या ध्येयामध्ये सहभागी व्हा{" "}
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">{t("joinOurMission")}</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            स्वयंसेवा, आर्थिक मदत किंवा जनजागृती यांपैकी कोणत्याही मार्गाने
-            तुम्ही एका मुलाच्या आयुष्यात सकारात्मक बदल घडवू शकता. तुमचा छोटासा
-            सहभागही त्यांच्या उज्ज्वल भविष्याकडे एक मोठे पाऊल ठरू शकतो.
+            {t("joinMissionDesc")}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <motion.a
@@ -586,7 +600,7 @@ export default function About() {
                 setLocation("/snehankur/donate");
               }}
             >
-              Donate
+              {t("donate")}
             </motion.a>
             <motion.a
               href="/snehankur/contact"
@@ -598,7 +612,7 @@ export default function About() {
                 setLocation("/snehankur/contact");
               }}
             >
-              Contact Us
+              {t("contact")}
             </motion.a>
           </div>
         </motion.div>

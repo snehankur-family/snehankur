@@ -2,6 +2,8 @@ import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
+import { LanguageProvider } from "@/lib/LanguageContext";
+import { LanguageToggle } from "@/components/language-toggle";
 import NotFound from "@/pages/not-found";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -14,7 +16,10 @@ import Contact from "@/pages/contact";
 function Router() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <div className="relative">
+        <Navbar />
+        <LanguageToggle />
+      </div>
       <main className="flex-grow">
         <Switch>
           <Route path="/snehankur" component={Home} />
@@ -33,8 +38,10 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
+      <LanguageProvider>
+        <Router />
+        <Toaster />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

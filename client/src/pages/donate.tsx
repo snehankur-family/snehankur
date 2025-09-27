@@ -10,8 +10,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Donate() {
+  const { t } = useLanguage();
   const [showQR, setShowQR] = useState(false);
   const { toast } = useToast();
   const upiId = "300046175008601@cnrb";
@@ -19,7 +21,7 @@ export default function Donate() {
   const copyUPIId = async () => {
     await navigator.clipboard.writeText(upiId);
     toast({
-      description: "Copied to clipboard!",
+      description: t("copied"),
     });
   };
 
@@ -27,11 +29,10 @@ export default function Donate() {
     <div className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Donate</h1>
-          <p className="text-lg text-gray-600">
-            💖 तुमच्या योगदानामुळे आम्हाला आमच्या मुलांसाठी चांगली काळजी आणि
-            संधी उपलब्ध होण्यास मदत होते.
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            {t("donateTitle")}
+          </h1>
+          <p className="text-lg text-gray-600">{t("donateDescription")}</p>
         </div>
 
         <div className="space-y-8">
@@ -39,15 +40,15 @@ export default function Donate() {
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
               <FaMobileAlt className="h-6 w-6 text-primary" />
-              <h2 className="text-2xl font-semibold">UPI Payment</h2>
+              <h2 className="text-2xl font-semibold">{t("upiPayment")}</h2>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 mb-4">
-                Scan the QR code or use our UPI ID for instant transfer
-              </p>
+              <p className="text-gray-600 mb-4">{t("scanQR")}</p>
               <div className="bg-gray-50 p-4 rounded-lg text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <p className="font-medium text-gray-900">UPI ID: {upiId}</p>
+                  <p className="font-medium text-gray-900">
+                    {t("upiId")}: {upiId}
+                  </p>
                   <Button variant="ghost" size="icon" onClick={copyUPIId}>
                     <FaCopy className="h-4 w-4" />
                   </Button>
@@ -58,7 +59,7 @@ export default function Donate() {
                   onClick={() => setShowQR(true)}
                 >
                   <FaQrcode className="mr-2 h-5 w-5" />
-                  Show QR Code
+                  {t("showQR")}
                 </Button>
               </div>
             </CardContent>
@@ -68,7 +69,7 @@ export default function Donate() {
           <Dialog open={showQR} onOpenChange={setShowQR}>
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
-                <DialogTitle>Scan QR Code</DialogTitle>
+                <DialogTitle>{t("scanQRCode")}</DialogTitle>
               </DialogHeader>
               <div className="flex items-center justify-center p-6 bg-gradient-to-r from-orange-50 to-orange-100 rounded-md">
                 <img
@@ -84,34 +85,38 @@ export default function Donate() {
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
               <FaUniversity className="h-6 w-6 text-primary" />
-              <h2 className="text-2xl font-semibold">Bank Transfer</h2>
+              <h2 className="text-2xl font-semibold">{t("bankTransfer")}</h2>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <p className="font-medium text-gray-900">Account Name</p>
+                  <p className="font-medium text-gray-900">
+                    {t("accountName")}
+                  </p>
                   <p className="text-gray-600">
                     SAMARPAN BAHU UDDESHIYA SEVABHAVI SANSTH
                   </p>
                 </div>
                 <Separator />
                 <div>
-                  <p className="font-medium text-gray-900">Account Number</p>
+                  <p className="font-medium text-gray-900">
+                    {t("accountNumber")}
+                  </p>
                   <p className="text-gray-600">6002101008601</p>
                 </div>
                 <Separator />
                 <div>
-                  <p className="font-medium text-gray-900">IFSC Code</p>
+                  <p className="font-medium text-gray-900">{t("ifscCode")}</p>
                   <p className="text-gray-600">CNRB0006002</p>
                 </div>
                 <Separator />
                 <div>
-                  <p className="font-medium text-gray-900">Bank Name</p>
+                  <p className="font-medium text-gray-900">{t("bankName")}</p>
                   <p className="text-gray-600">Canara Bank</p>
                 </div>
                 <Separator />
                 <div>
-                  <p className="font-medium text-gray-900">Branch</p>
+                  <p className="font-medium text-gray-900">{t("branch")}</p>
                   <p className="text-gray-600">Partur</p>
                 </div>
               </div>
@@ -119,7 +124,7 @@ export default function Donate() {
           </Card>
 
           <div className="text-center text-gray-600 text-sm">
-            <p>For any queries related to donations, please contact us at:</p>
+            <p>{t("donationQueries")}</p>
             <p className="font-medium">Samarpan7171@gmail.com</p>
           </div>
         </div>
