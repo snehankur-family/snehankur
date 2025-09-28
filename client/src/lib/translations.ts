@@ -43,7 +43,7 @@ export const translations = {
     childrenSupported: "Children Supported",
     childrenSupportedDesc: "Since our establishment, we have provided education, shelter and loving care to more than 15 children. We have provided all the necessary help and guidance for their growth and development, which has built confidence and self-reliance in them.",
     yearsOfService: "Years of Service",
-    yearsOfServiceDesc: "We have been dedicated to serving needy and deprived children for more than 7 years. Our service for their welfare is selfless and continuous, and our goal is to give them direction towards a bright future.",
+    yearsOfServiceDesc: `We have been dedicated to serving needy and deprived children for more than ${new Date().getFullYear() - 2017} years. Our service for their welfare is selfless and continuous, and our goal is to give them direction towards a bright future.`,
     awards: "Awards",
     awardsDesc: "We have been honored with more than 5 prestigious awards for our remarkable contribution in the field of child welfare and education. These awards are proof of our continuous service spirit and quality work.",
     ourStory: "Our Story",
@@ -169,6 +169,9 @@ Because at the heart of Snehankur, there is not just an organization — there i
     ourAddress: "Our Address",
     copyright: "All rights reserved.",
     snehankurOrphanage: "Snehankur Orphanage",
+
+    emailFooter: "email",
+    phoneFooter:"phone",
   
   },
   mr: {
@@ -251,8 +254,8 @@ Because at the heart of Snehankur, there is not just an organization — there i
     ourTeam: "आमची टीम",
     advisoryCommittee: "सल्लागार समिती",
     boardOfDirectors: "संचालक मंडळ",
-    joinOurMission: "आमची ध्येयात सामील व्हा",
-    joinMissionDesc: "तुम्ही स्वयंसेवकीच्या, आर्थिक मदतीच्या किंवा ज्ञानाच्या मार्गाने बालांच्या जीवनात सकारात्मक बदल करू शकता. तुमचे लहान योगदान त्यांच्या उज्ज्वल भविष्यात बडबड पाया होऊ शकते.",
+    joinOurMission: "आमच्या ध्येयात सामील व्हा",
+    joinMissionDesc: "तुम्ही स्वयंसेवा, आर्थिक मदत किंवा जागरूकता याद्वारे मुलाच्या आयुष्यात सकारात्मक बदल घडवून आणू शकता. तुमचे छोटेसे योगदान देखील त्यांच्या उज्ज्वल भविष्याकडे एक मोठे पाऊल ठरू शकते.",
     
     //our Team
     President: "अध्यक्ष",
