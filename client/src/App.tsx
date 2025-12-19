@@ -22,11 +22,11 @@ function Router() {
       </div>
       <main className="flex-grow">
         <Switch>
-          <Route path="/snehankur" component={Home} />
-          <Route path="/snehankur/about" component={About} />
-          <Route path="/snehankur/gallery" component={Gallery} />
-          <Route path="/snehankur/donate" component={Donate} />
-          <Route path="/snehankur/contact" component={Contact} />
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/donate" component={Donate} />
+          <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </main>

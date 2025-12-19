@@ -591,25 +591,25 @@ export default function About() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <motion.a
-              href="/snehankur/donate"
+              href="/donate"
               className="bg-white text-orange-600 font-bold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => {
                 e.preventDefault();
-                setLocation("/snehankur/donate");
+                setLocation("/donate");
               }}
             >
               {t("donate")}
             </motion.a>
             <motion.a
-              href="/snehankur/contact"
+              href="/contact"
               className="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => {
                 e.preventDefault();
-                setLocation("/snehankur/contact");
+                setLocation("/contact");
               }}
             >
               {t("contact")}

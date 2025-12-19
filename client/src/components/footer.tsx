@@ -56,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/snehankur"
+                  href="/"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
                   {t("home")}
@@ -64,7 +64,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/snehankur/about"
+                  href="/about"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
                   {t("aboutUs")}
@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/snehankur/gallery"
+                  href="/gallery"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
                   {t("gallery")}
@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/snehankur/donate"
+                  href="/donate"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
                   {t("donate")}
@@ -88,7 +88,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/snehankur/contact"
+                  href="/contact"
                   className="text-gray-600 hover:text-orange-500 transition-colors"
                 >
                   {t("contact")}

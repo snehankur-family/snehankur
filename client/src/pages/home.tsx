@@ -24,7 +24,7 @@ export default function Home() {
               {t("quoteAuthor")}
             </p>
             <div className="flex justify-center gap-4">
-              <Link href="/snehankur/donate">
+              <Link href="/donate">
                 <Button
                   size="lg"
                   className="bg-orange-500 hover:bg-orange-600 text-white"
@@ -32,7 +32,7 @@ export default function Home() {
                   {t("donate")}
                 </Button>
               </Link>
-              <Link href="/snehankur/contact">
+              <Link href="/contact">
                 <Button variant="outline" size="lg">
                   {t("contact")}
                 </Button>

@@ -11,11 +11,11 @@ export default function Navbar() {
   const { t } = useLanguage();
 
   const navigation = [
-    { name: t("home"), href: "/snehankur" },
-    { name: t("aboutUs"), href: "/snehankur/about" },
-    { name: t("gallery"), href: "/snehankur/gallery" },
-    { name: t("donate"), href: "/snehankur/donate" },
-    { name: t("contact"), href: "/snehankur/contact" },
+    { name: t("home"), href: "/" },
+    { name: t("aboutUs"), href: "/about" },
+    { name: t("gallery"), href: "/gallery" },
+    { name: t("donate"), href: "/donate" },
+    { name: t("contact"), href: "/contact" },
   ];
 
   return (
@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/snehankur">
+            <Link href="/">
               <img
                 src="https://github.com/snehankur-family/website-photos/blob/main/snehakurLogo_50.jpg?raw=true"
                 alt="Snehankur Logo"
@@ -38,11 +38,10 @@ export default function Navbar() {
               <Link key={item.name} href={item.href}>
                 <Button
                   variant={location === item.href ? "default" : "ghost"}
-                  className={`text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
-                    location === item.href
+                  className={`text-sm font-medium transition-all duration-300 transform hover:scale-105 ${location === item.href
                       ? "bg-primary"
                       : "hover:bg-orange-100 hover:text-orange-600"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Button>
@@ -84,11 +83,10 @@ export default function Navbar() {
                       >
                         <Button
                           variant={location === item.href ? "default" : "ghost"}
-                          className={`w-full justify-start text-base font-medium transition-all duration-300 transform hover:scale-105 ${
-                            location === item.href
+                          className={`w-full justify-start text-base font-medium transition-all duration-300 transform hover:scale-105 ${location === item.href
                               ? "bg-orange-100 text-orange-600"
                               : "hover:bg-orange-50 hover:text-orange-500"
-                          }`}
+                            }`}
                         >
                           {item.name}
                         </Button>
